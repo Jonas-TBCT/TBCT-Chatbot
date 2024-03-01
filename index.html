@@ -51,7 +51,7 @@
                             <h2 class="card-title">Chatbase</h2>
                             <p class="card-text">Chatbase is an AI chatbot builder that allows companies and other users to create their own chatbot trained on their specific data. Chatbase comes with a monthly subscription plan varying from $19/month to $399/month.</p>
                         </div>
-                        <div class="card-footer"><a class="btn btn-success btn-sm" href="Chatbase.html">Try Now</a></div>
+                        <div class="card-footer"><a class="btn btn-success btn-sm" href="#" onclick="loadChatbot()">Try Now</a></div>
                     </div>
                 </div>
                 <div class="col-md-4 mb-5">
@@ -82,5 +82,27 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+	<script>
+	function loadChatbot() {
+    	// Set the chatbot configuration
+	    window.embeddedChatbotConfig = {
+	        chatbotId: "GEy9BR2yM3pNBd8dNaSj3",
+	        domain: "www.chatbase.co"
+	    };
+	
+	    // Check if the script is already loaded to prevent duplicates
+	    if (!document.querySelector('script[src="https://www.chatbase.co/embed.min.js"]')) {
+	        // Create a new script element for the chatbot
+	        var script = document.createElement('script');
+	        script.src = "https://www.chatbase.co/embed.min.js";
+	        script.defer = true;
+	
+	        // Append the script to the body to load it
+	        document.body.appendChild(script);
+	    }
+	}
+	</script>
+	    
     </body>
 </html>
